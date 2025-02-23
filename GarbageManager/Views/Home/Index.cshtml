@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model GarbageManager.Models.Garbage
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Garbage Management lets users add waste types and quantities to calculate their estimated value. It promotes efficient waste disposal by providing instant pricing for collected waste.</p>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="CreateEditGarbage">Add Item</a>
+</div>
+
+
+
+@* <form asp-action="GarbageInfoSubmit" asp-controller="Home"> *@
+@*     <input class="form-control " hidden type="number" placeholder="Id" asp-for="Id" /> *@
+@*     <label>Name</label> *@
+@*     <input class="form-control" type="text" placeholder="Name of Item" asp-for="Name" /> *@
+
+@*     <label>Type</label> *@
+@*     <select class="form-control" asp-for="Type"> *@
+@*         <option >Paper</option> *@
+@*         <option>E-waste</option> *@
+@*     </select> *@
+
+@*     <label>Quantity</label> *@
+@*     <input class="form-control" type="number" placeholder="Quantity of Item" asp-for="Quantity" /> *@
+
+@*     <button class="btn btn-primary mt-4" type="submit">Submit</button> *@
+@* </form> *@

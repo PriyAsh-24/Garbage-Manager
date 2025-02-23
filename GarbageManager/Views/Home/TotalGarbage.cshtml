@@ -1,0 +1,56 @@
+﻿
+@model List<Garbage> 
+
+<div class="text-center">
+    <h1 class="display-4">All Waste</h1>
+    <br />
+    <hr />
+    <h3> Total Cost = ₹ @ViewBag.garbagePrice</h3>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach(var garbage in Model){
+                    <tr>
+                        <td>
+                            @garbage.Name
+                        </td>
+                        <td>
+                            @garbage.Type
+                        </td>
+                        <td>
+                            @garbage.Quantity
+                        </td>
+                        <td>
+                            <a asp-action="CreateEditGarbage" asp-route-id="@garbage.Id">Edit</a>
+                            <a asp-action="DeleteGarbage" asp-route-id="@garbage.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="text-center mt-4" >
+    <a class="btn btn-primary" asp-action="DownloadPdf">Download PDF</a>
+    <a class="btn btn-secondary" asp-action="ClearAll">Clear All</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="CreateEditGarbage">Add Item</a>
+</div>
+
+
