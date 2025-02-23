@@ -41,7 +41,7 @@ namespace GarbageManager.Controllers
         public IActionResult DeleteGarbage(int id)
         {
             var garbageInDb=_context.Garbages.SingleOrDefault(x=> x.Id == id);
-            _context.Garbages.Remove(garbageInDb);
+            _context.Garbages.Remove(garbageInDb!);
             _context.SaveChanges();
             return RedirectToAction("TotalGarbage");
         }
@@ -95,7 +95,6 @@ namespace GarbageManager.Controllers
         {
             var garbageList = _context.Garbages.ToList();
 
-            //ViewBag.garbagePrice = garbageList.Sum(g => g.TotalPrice); 
             return new ViewAsPdf("TotalGarbage", garbageList)
             {
                 FileName = "GarbageReport.pdf"
